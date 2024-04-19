@@ -1,0 +1,111 @@
+:root {
+	--color-back:#51565a;
+	--color-blue-1:#75c7ff;
+	--color-blue-2:#4fa8fb;
+	--color-brown-1:#ffbf75;
+	--color-brown-2:#ffa43a;
+}
+
+body {
+	display: flex;
+	flex-flow: column wrap;
+	margin: 0;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	padding-left: 0.5rem;
+	background-color: var(--color-back);
+}
+
+div.logo , nav , ul{
+	display: flex;
+}
+
+main > div {
+	margin: 0.625rem auto 0.93rem auto;
+}
+
+img {
+	margin: auto 1.56rem auto 0 ;
+}
+
+.title {
+	font: bold 1.5rem "Times New Roman";
+}
+
+div.logo > p {
+	background-color: var(--color-blue-2);
+	color: var(--color-back);
+	padding: 0.75rem;
+	border-radius: 0.65rem;
+}
+
+nav {
+	justify-content: flex-end;
+	align-items: center;
+}
+
+ul {
+	flex-flow: row nowrap;
+}
+
+li {
+	margin: auto 0.625rem;
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: var(--color-blue-1);
+	font-weight: bold;
+}
+
+li > a:hover {
+	font: bolder;
+	color: var(--color-back);
+	background-color: var(--color-blue-1);
+	padding: 0.93rem;
+	border-radius: 0.625rem;
+}
+
+main {
+	display: flex;
+	flex-flow: column nowrap;
+	margin: 0 .25rem;
+}
+
+.game-border { 
+	height: calc(85vw*0.45);
+	width: 85vw;
+	background-color: var(--color-blue-1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0.78rem;
+}
+
+.game {
+	height: calc(82vw*0.43);
+	width: 82vw;
+	background-color: var(--color-blue-2);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0.7rem;
+}
+
+
+
+footer {
+	display: flex;
+	justify-content: center;
+	background-color: var(--color-back);
+	color: var(--color-blue-1);
+}
+
+span {
+	font-weight: bold;
+}
+
