@@ -57,52 +57,47 @@ li {
 }
 
 a {
-	text-decoration: none;
 	color: var(--color-blue-1);
 	font-weight: bold;
+	text-decoration: none;
+	transition: 1s;
 }
 
 li > a:hover {
-	font: bolder;
 	color: var(--color-back);
 	background-color: var(--color-blue-1);
-	padding: 0.93rem;
+	transform: scale(1.1);
+	font: 700;
 	border-radius: 0.625rem;
 }
 
 main {
-	display: flex;
-	flex-flow: column nowrap;
+	display: grid;
 	margin: 0 .25rem;
-}
-
-.game-border { 
-	height: calc(85vw*0.45);
-	width: 85vw;
-	background-color: var(--color-blue-1);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-radius: 0.78rem;
 }
 
 .game {
 	height: calc(82vw*0.43);
 	width: 82vw;
-	background-color: var(--color-blue-2);
+	background-color: var(--color-blue-1);
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	border: 0.4rem solid var(--color-blue-2);
 	border-radius: 0.7rem;
 }
 
-
-
 footer {
-	display: flex;
-	justify-content: center;
 	background-color: var(--color-back);
 	color: var(--color-blue-1);
+}
+
+footer > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 span {
