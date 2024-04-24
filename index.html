@@ -25,35 +25,9 @@
         </nav>
     </header>
     <main>
-        <div class="game">
-            <!-- 
-            <style>
-            .game-border {
-            border: 2px solid #333;
-            border-radius: 10px;
-            padding: 20px;
-            width: fit-content;
-            margin: 0 auto;
-            }
-
-            .game {
-            height: 60px;
-            width: 120px;
-            background-color: #FFD700;
-            border: 2px solid #333;
-            border-radius: 10px;
-            text-align: center;
-            line-height: 60px;
-            cursor: pointer;
-            font-size: 1.2em;
-            }
-
-            .game p {
-            margin: 0;
-            }
-            <style> 
-            -->
-            <p>Play</p>
+        <div class="game" id="game-button">
+    <p>Play</p>
+            
         </div>
 
         <div class="info">
@@ -86,6 +60,45 @@
         </div>
     </main>
     <footer>
+            <script>
+        document.getElementById("game-button").addEventListener("click", function() {
+        enviarMensaje(); // Llama a la función enviarMensaje() al hacer clic en el botón de juego
+    });        
+        function enviarMensaje() {
+            var mensajeUsuario = document.getElementById("mensaje").value;
+            var chatHistory = document.getElementById("chat-history");
+            var chatBubbleUser = document.createElement("div");
+            chatBubbleUser.innerHTML = "<strong>Tú:</strong> " + mensajeUsuario;
+            chatHistory.appendChild(chatBubbleUser);
+            fetch('https://api.openai.com/v1/engines/text-davinci-003/completions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ', //Aquí nos falta la clave API a lado de Bearer
+                },
+                body: JSON.stringify({
+                    prompt: mensajeUsuario,
+                    max_tokens: 150
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                var respuestaChatGPT = data.choices[0].text.trim();
+                var chatBubbleGPT = document.createElement("div");
+                chatBubbleGPT.innerHTML = "<strong>ChatGPT:</strong> " + respuestaChatGPT;
+                chatHistory.appendChild(chatBubbleGPT);
+                chatHistory.scrollTop = chatHistory.scrollHeight;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+            document.getElementById("mensaje").value = "";
+        }
+
+        function iniciarJuego() {
+            enviarMensaje();
+        }    </script>
         <div class="about-us">
             <a href="https://sudamericano.ec/educacion-abierta/"> https://sudamericano.ec/educacion-abierta/</a>
             <p>De <span class="text bold">Jardi</span>, <span class="text bold">Naitsabes222</span> y <span class="text bold">DarkWolf.</span></p>
