@@ -26,7 +26,7 @@
     </header>
     <main>
         <div class="game" id="game-button">
-            <p>Play</p>
+    <p>Play</p>
         </div>
 
         <div class="info">
@@ -58,7 +58,6 @@
             </p>
         </div>
     </main>
-    <footer>
         <script>
         document.getElementById("game-button").addEventListener("click", function() {
             enviarMensaje();
@@ -74,7 +73,7 @@
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': 'Bearer', //Aquí falta colocar la clave API junto a Bearer
+                    'Authorization': 'Bearer <clave-api>', // Aqui falta reemplazar "<clave-api>" con la clave API
                 },
                 body: JSON.stringify({
                     prompt: mensajeUsuario,
@@ -96,6 +95,7 @@
             document.getElementById("mensaje").value = "";
         }
 
+    <footer>    
         <div class="about-us">
             <a href="https://sudamericano.ec/educacion-abierta/"> https://sudamericano.ec/educacion-abierta/</a>
             <p>De <span class="text bold">Jardi</span>, <span class="text bold">Naitsabes222</span> y <span class="text bold">DarkWolf.</span></p>
