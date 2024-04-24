@@ -28,11 +28,11 @@ main > div {
 }
 
 img {
-	margin: auto 1.50rem auto 0 ;
+	margin: auto 1.56rem auto 0 ;
 }
 
 .title {
-	font: bold 1.75rem "Times New Roman";
+	font: bold 1.5rem "Times New Roman";
 }
 
 div.logo > p {
@@ -77,17 +77,17 @@ main {
 }
 
 .game {
-    height: calc(82vw * 0.43);
-    width: 82vw;
-    background-color: var(--color-blue-1);
+	height: calc(82vw * 0.43);
+	width: 82vw;
+	background-color: var(--color-blue-1);
 	
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	
-    border: 0.4rem solid var(--color-blue-2);
-    border-radius: 0.7rem;
-    cursor: pointer;
+	border: 0.4rem solid var(--color-blue-2);
+	border-radius: 0.7rem;
+	cursor: pointer;
 }
 
 footer {
