@@ -1,110 +1,160 @@
+/* Cambios en los colores */
 :root {
-	--color-back:#4b4e53;
-	--color-blue-1:#94e0ff;
-	--color-blue-2:#2b7bc6;
-	--color-brown-1:#ffa86f;
-	--color-brown-2:#f2851d;
+    --color-back: linear-gradient(to right, var(--color-back-start), var(--color-back-end));
+    --color-back-start:#1a1a1a;
+    --color-back-end:#000000;
+    --color-blue-1:#00e6e6;
+    --color-blue-2:#004d4d;
+    --color-brown-1:#ff9900;
+    --color-brown-2:#663300;
+    --color-white-1:#ffffff;
 }
 
+/* Estilos generales */
 body {
-	display: flex;
-	flex-flow: column wrap;
-	margin: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--color-back);
+    color: var(--color-blue-1);
 }
 
+/* Encabezado */
 header {
-	display: flex;
-	justify-content: space-between;
-	padding-left: 0.5rem;
-	background-color: var(--color-back);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--color-blue-2);
 }
 
-div.logo , nav , ul{
-	display: flex;
+.logo img {
+    height: 50px;
 }
 
-main > div {
-	margin: 0.625rem auto 0.93rem auto;
-}
-
-img {
-	margin: auto 1.56rem auto 0 ;
+.logo p {
+    padding: 10px;
+    background-color: var(--color-brown-1);
+    border-radius: 5px;
 }
 
 .title {
-	font: bold 1.5rem "Times New Roman";
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-brown-1);
 }
 
-div.logo > p {
-	background-color: var(--color-blue-2);
-	color: var(--color-back);
-	padding: 0.75rem;
-	border-radius: 0.65rem;
+.navegation ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-nav {
-	justify-content: flex-end;
-	align-items: center;
+.navegation li {
+    margin-left: 1rem;
 }
 
-ul {
-	flex-flow: row nowrap;
+.navegation a {
+    text-decoration: none;
+    color: var(--color-blue-1);
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: 1s;
 }
 
-li {
-	margin: auto 0.625rem;
-	list-style: none;
+.navegation a:hover {
+    color: var(--color-back);
+    background-color: var(--color-brown-1);
+    border-radius: 5px;
+    padding: 15px 20px;
 }
 
-a {
-	color: var(--color-blue-1);
-	font-weight: bold;
-	text-decoration: none;
-	transition: 1s;
-}
-
-li > a:hover {
-	color: var(--color-back);
-	background-color: var(--color-blue-1);
-	transform: scale(1.1);
-	font: 700;
-	border-radius: 0.625rem;
-}
-
+/* Contenedor principal */
 main {
-	display: grid;
-	margin: 0 .25rem;
+    padding: 4rem;
 }
 
+/* Sección del juego */
 .game {
-	height: calc(82vw * 0.43);
-	width: 82vw;
-	background-color: var(--color-blue-1);
-	
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	
-	border: 0.4rem solid var(--color-blue-2);
-	border-radius: 0.7rem;
-	cursor: pointer;
-}
-
-footer {
-	background-color: var(--color-back);
-	color: var(--color-blue-1);
-}
-
-footer > div {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-span {
-	font-weight: bold;
-}
-
-.about-us {
+    padding: 10rem;
     text-align: center;
+    background-color: var(--color-blue-1);
+    border: 10px solid var(--color-blue-2);
+    border-radius: 3rem;
+    cursor: pointer;
+    transition: transform 1.5s ease;
+    margin-top: 3rem;
+}
+
+.game:hover {
+    transform: scale(1.05);
+}
+
+.game p {
+    font-size: 1.5rem;
+    color: var(--color-blue-2);
+}
+
+.game .additional-functionality {
+    display: none;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-blue-1);
+    border: 2px solid var(--color-brown-1);
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 1;
+    margin-top: 20px;
+
+}
+
+.game .additional-functionality p {
+    font-size: 1rem;
+    color: var(--color-white-1);
+}
+
+.game:hover .additional-functionality {
+    display: block;
+}
+
+/* Sección de información */
+.info {
+    margin-top: 2rem;
+}
+
+.title_1 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--color-white-1);
+    margin-bottom: 0.5rem;
+}
+
+.title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--color-brown-1);
+    margin-bottom: 0.5rem;
+}
+
+.text {
+    color: var(--color-blue-1);
+    line-height: 1.5;
+}
+
+/* Pie de página */
+footer {
+    padding: 1rem;
+    text-align: center;
+    background-color: var(--color-blue-2);
+    color: var(--color-blue-1);
+}
+
+.about-us a {
+    color: var(--color-brown-1);
+}
+
+.about-us a:hover {
+    color: var(--color-brown-2);
 }
